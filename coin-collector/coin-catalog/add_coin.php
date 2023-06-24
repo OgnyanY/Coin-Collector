@@ -13,19 +13,22 @@ if ($conn->connect_error) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $username = $_POST["username"];
-  $password = password_hash($_POST["password"], PASSWORD_DEFAULT);  // hash the password
-  $email = $_POST["email"];
+  $name = $_POST["name"];
+  $country = $_POST["country"];
+  $year = $_POST["year"];
+  $value = $_POST["value"];
+  $image_front = $_POST["image_front"];
+  $image_back = $_POST["image_back"];
 
-  $sql = "INSERT INTO Users (username, password, email) VALUES (?, ?, ?)";
+  $sql = "INSERT INTO Coins (name, country, year, value, image_front, image_back) VALUES (?, ?, ?, ?, ?, ?)";
 
   // Prepare and bind
   $stmt = $conn->prepare($sql);
-  $stmt->bind_param("sss", $username, $password, $email);
+  $stmt->bind_param("ssids", $name, $country, $year, $value, $image_front, $image_back);
 
   // Execute the statement
   if ($stmt->execute()) {
-    echo "New record created successfully";
+    echo "New coin added successfully";
   } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
   }

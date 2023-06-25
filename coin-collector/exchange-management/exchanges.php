@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Exchanges</title>
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
     <h2>Exchanges</h2>

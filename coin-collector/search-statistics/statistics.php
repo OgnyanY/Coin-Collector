@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Statistics</title>
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
     <h2>Statistics</h2>

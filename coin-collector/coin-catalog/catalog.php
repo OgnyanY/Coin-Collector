@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Coin Catalog</title>
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
     <h2>Coin Catalog</h2>

@@ -1,35 +1,46 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Add Coin</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
 
-<head>
-  <title>Add Coin</title>
-  <link rel="stylesheet" href="add_coin.css" />
-</head>
+  <body>
+    <h1>Add a New Coin</h1>
 
-<body>
-  <h1>Add a New Coin</h1>
+    <form action="add_coin.php" method="post">
+      <label for="name">Coin Name:</label><br />
+      <input id="input" type="text" id="name" name="name" required /><br />
 
-  <form action="add_coin.php" method="post">
-    <label for="name">Coin Name:</label><br />
-    <input id="input" type="text" id="name" name="name" required /><br />
-    
-    <label for="country">Country:</label><br />
-    <input id="input" type="text" id="country" name="country" required /><br />
-    
-    <label for="year">Year:</label><br />
-    <input id="input" type="number" id="year" name="year" required /><br />
-    
-    <label for="value">Value:</label><br />
-    <input id="input" type="number" step="0.01" id="value" name="value" required /><br />
-    
-    <label for="image_front">Image Front (URL):</label><br />
-    <input id="input" type="text" id="image_front" name="image_front" /><br />
-    
-    <label for="image_back">Image Back (URL):</label><br />
-    <input id="input" type="text" id="image_back" name="image_back" /><br />
-    
-    <input type="submit" value="Add Coin" />
-  </form>
-</body>
+      <label for="country">Country:</label><br />
+      <input
+        id="input"
+        type="text"
+        id="country"
+        name="country"
+        required
+      /><br />
 
+      <label for="year">Year:</label><br />
+      <input id="input" type="number" id="year" name="year" required /><br />
+
+      <label for="value">Value:</label><br />
+      <input
+        id="input"
+        type="number"
+        step="0.01"
+        id="value"
+        name="value"
+        required
+      /><br />
+
+      <label for="image_front">Image Front (URL):</label><br />
+      <input id="input" type="text" id="image_front" name="image_front" /><br />
+
+      <label for="image_back">Image Back (URL):</label><br />
+      <input id="input" type="text" id="image_back" name="image_back" /><br />
+
+      <input type="submit" value="Add Coin" />
+    </form>
+  </body>
 </html>

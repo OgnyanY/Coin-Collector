@@ -14,18 +14,18 @@ if ($conn->connect_error) {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $username = $_POST["username"];
-  $password = password_hash($_POST["password"], PASSWORD_DEFAULT);  // hash the password
-  $email = $_POST["email"];
+  $password = $_POST["password"];
 
-  $sql = "INSERT INTO Users (username, password, email) VALUES (?, ?, ?)";
+  $sql = "INSERT INTO Users (username, password) VALUES (?, ?)";
 
   // Prepare and bind
   $stmt = $conn->prepare($sql);
-  $stmt->bind_param("sss", $username, $password, $email);
+  $stmt->bind_param("ss", $username, $password);
 
   // Execute the statement
   if ($stmt->execute()) {
-    echo "New record created successfully";
+    header("Location: login.html");  // redirect to login page
+    exit;
   } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
   }

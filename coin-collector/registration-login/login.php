@@ -14,26 +14,24 @@ if ($conn->connect_error) {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $username = $_POST["username"];
-  $password = $_POST["password"];  // plain text password
+  $password = $_POST["password"];
 
-  $sql = "SELECT password FROM Users WHERE username = ?";
+  $sql = "SELECT id FROM Users WHERE username = ? AND password = ?";
 
   // Prepare and bind
   $stmt = $conn->prepare($sql);
-  $stmt->bind_param("s", $username);
+  $stmt->bind_param("ss", $username, $password);
 
   // Execute the statement
   $stmt->execute();
 
   // Bind the result to a variable
-  $stmt->bind_result($hashed_password);
+  $stmt->bind_result($id);
 
   // Fetch the result
-  $stmt->fetch();
-
-  // Verify the password
-  if (password_verify($password, $hashed_password)) {
-    echo "Login successful";
+  if ($stmt->fetch()) {
+    header("Location: ../main.html");  // redirect to main page
+    exit;
   } else {
     echo "Invalid username or password";
   }

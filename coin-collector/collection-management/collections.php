@@ -7,9 +7,11 @@
 </head>
 
 <body>
-<div class="navbar">
-    <a href="../registration-login/login.html">Exit</a>
-    <a href="../main.html">Home</a>
+  <div class="navbar">
+    <div class="menu">
+      <a href="../registration-login/login.html">Exit</a>
+      <a href="../main.html">Home</a>
+    </div>
     <div id="logo">
       <h2>Coin catalog</h2>
     </div>

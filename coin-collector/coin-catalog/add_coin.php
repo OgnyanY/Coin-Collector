@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   // Prepare and bind
   $stmt = $conn->prepare($sql);
-  $stmt->bind_param("ssids", $name, $country, $year, $value, $image_front, $image_back);
+  $stmt->bind_param("ssidss", $name, $country, $year, $value, $image_front, $image_back);
 
   // Execute the statement
   if ($stmt->execute()) {

@@ -25,6 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // Execute the statement
   if ($stmt->execute()) {
     echo "New collection added successfully";
+    header("Location: ../successful.html");
   } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
   }

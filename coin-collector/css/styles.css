@@ -90,3 +90,8 @@ a[type="registration"] {
 #logo h2{
     margin-top: 0px;
 }
+
+.coin_image{
+    height: 200px;
+    width: 200px;
+}

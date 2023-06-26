@@ -1,41 +1,51 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Collections</title>
-    <link rel="stylesheet" href="../css/styles.css">
+  <title>Collections</title>
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
+
 <body>
-    <h2>Collections</h2>
+  <div class="navbar">
+    <a href="registration-login/login.html">Exit</a>
+    <div id="logo">
+      <h2>Coin catalog</h2>
+    </div>
+  </div>
 
-    <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "test";
+  <h2>Collections</h2>
 
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
+  <?php
+  $servername = "localhost";
+  $username = "root";
+  $password = "";
+  $dbname = "test";
 
-    // Check connection
-    if ($conn->connect_error) {
-      die("Connection failed: " . $conn->connect_error);
+  // Create connection
+  $conn = new mysqli($servername, $username, $password, $dbname);
+
+  // Check connection
+  if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+  }
+
+  $sql = "SELECT Users.username, Collections.name FROM Collections JOIN Users ON Collections.user_id = Users.id";
+
+  $result = $conn->query($sql);
+
+  if ($result->num_rows > 0) {
+    // output data of each row
+    while ($row = $result->fetch_assoc()) {
+      echo "<h3>" . $row["name"] . "</h3>";
+      echo "<p>Owned by: " . $row["username"] . "</p>";
     }
+  } else {
+    echo "No collections found";
+  }
 
-    $sql = "SELECT Users.username, Collections.name FROM Collections JOIN Users ON Collections.user_id = Users.id";
-
-    $result = $conn->query($sql);
-
-    if ($result->num_rows > 0) {
-      // output data of each row
-      while($row = $result->fetch_assoc()) {
-        echo "<h3>" . $row["name"] . "</h3>";
-        echo "<p>Owned by: " . $row["username"] . "</p>";
-      }
-    } else {
-      echo "No collections found";
-    }
-
-    $conn->close();
-    ?>
+  $conn->close();
+  ?>
 </body>
+
 </html>

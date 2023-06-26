@@ -7,13 +7,14 @@
 </head>
 
 <body>
-  <div class="navbar">
-    <a href="registration-login/login.html">Exit</a>
+<div class="navbar">
+    <a href="../registration-login/login.html">Exit</a>
+    <a href="../main.html">Home</a>
     <div id="logo">
       <h2>Coin catalog</h2>
     </div>
   </div>
-  
+
   <h2>Exchanges</h2>
 
   <?php

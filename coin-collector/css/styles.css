@@ -5,7 +5,10 @@ body {
     background-color: #f0f0f0;
 }
 
-h2 {
+
+
+h2,
+h3 {
     background-color: #333;
     color: #fff;
     padding: 10px 0;
@@ -80,18 +83,39 @@ a[type="registration"] {
     font-weight: bold;
 }
 
-#menu{
+#menu {
     margin-top: 150px;
 }
-#logo{
+
+#logo {
     justify-content: center;
 }
 
-#logo h2{
+#logo h2 {
     margin-top: 0px;
 }
 
-.coin_image{
-    height: 200px;
-    width: 200px;
+.coin_row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid #707070;
+    padding: 20px 0;
+}
+
+.coin_row>p {
+    flex: 1 1 20%;
+    text-align: center;
+}
+
+.coin_images {
+    flex: 1 1 40%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.coin_image {
+    height: 100px;
+    width: 100px;
 }

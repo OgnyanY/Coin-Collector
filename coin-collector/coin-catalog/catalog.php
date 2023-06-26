@@ -38,12 +38,14 @@
   if ($result->num_rows > 0) {
     // output data of each row
     while ($row = $result->fetch_assoc()) {
+      echo "<div class='coin_row'>";
       echo "<h3>" . $row["name"] . "</h3>";
       echo "<p>Country: " . $row["country"] . "</p>";
       echo "<p>Year: " . $row["year"] . "</p>";
       echo "<p>Value: " . $row["value"] . "</p>";
-      echo "<p><img src='" . $row["image_front"] . "' alt='Image Front' class='coin_image'></p>";
-      echo "<p><img src='" . $row["image_back"] . "' alt='Image Back' class='coin_image'></p>";
+      echo "<div class='coin_images'><img src='" . $row["image_front"] . "' alt='Image Front' class='coin_image'>";
+      echo "<img src='" . $row["image_back"] . "' alt='Image Back' class='coin_image'></div>";
+      echo "</div>";
     }
   } else {
     echo "No coins found";

@@ -1,18 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Add Collection</title>
-    <link rel="stylesheet" href="../css/styles.css" />
-  </head>
-  <body>
-    <h2>Add a New Collection</h2>
 
-    <form action="add_collection.php" method="post">
-      <label for="user_id">User ID:</label><br />
-      <input type="number" id="user_id" name="user_id" required /><br />
-      <label for="name">Collection Name:</label><br />
-      <input type="text" id="name" name="name" required /><br />
-      <input type="submit" value="Add Collection" />
-    </form>
-  </body>
+<head>
+  <title>Add Collection</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+
+<body>
+  <div class="navbar">
+    <a href="registration-login/login.html">Exit</a>
+    <a href="../main.html">Home</a>
+    <div id="logo">
+      <h2>Coin catalog</h2>
+    </div>
+  </div>
+
+  <h2>Add a New Collection</h2>
+
+  <form action="add_collection.php" method="post">
+    <label for="user_id">User ID:</label><br />
+    <input type="number" id="user_id" name="user_id" required /><br />
+    <label for="name">Collection Name:</label><br />
+    <input type="text" id="name" name="name" required /><br />
+    <input type="submit" value="Add Collection" />
+  </form>
+</body>
+
 </html>

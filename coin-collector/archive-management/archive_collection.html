@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Archive Collection</title>
-    <link rel="stylesheet" href="../css/styles.css" />
-  </head>
-  <body>
-    <h2>Archive a Collection</h2>
 
-    <form action="archive_collection.php" method="post">
-      <label for="collection_id">Collection ID:</label><br />
-      <input
-        type="number"
-        id="collection_id"
-        name="collection_id"
-        required
-      /><br />
-      <input type="submit" value="Archive Collection" />
-    </form>
-  </body>
+<head>
+  <title>Archive Collection</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+
+<body>
+  <div class="navbar">
+    <a href="registration-login/login.html">Exit</a>
+    <a href="../main.html">Home</a>
+    <div id="logo">
+      <h2>Coin catalog</h2>
+    </div>
+  </div>
+
+  <h2>Archive a Collection</h2>
+
+  <form action="archive_collection.php" method="post">
+    <label for="collection_id">Collection ID:</label><br />
+    <input type="number" id="collection_id" name="collection_id" required /><br />
+    <input type="submit" value="Archive Collection" />
+  </form>
+</body>
+
 </html>

@@ -29,6 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // Execute the statement
   if ($stmt->execute()) {
     echo "New coin added successfully";
+    header("Location: ../main.html");  // redirect to login page
   } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
   }

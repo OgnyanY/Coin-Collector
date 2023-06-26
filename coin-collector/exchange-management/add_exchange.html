@@ -1,24 +1,35 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Add Exchange</title>
-    <link rel="stylesheet" href="../css/styles.css" />
-  </head>
-  <body>
-    <h2>Add a New Exchange</h2>
 
-    <form action="add_exchange.php" method="post">
-      <label for="user_id">User ID:</label><br />
-      <input type="number" id="user_id" name="user_id" required /><br />
-      <label for="coin_id">Coin ID:</label><br />
-      <input type="number" id="coin_id" name="coin_id" required /><br />
-      <label for="type">Type:</label><br />
-      <select id="type" name="type" required>
-        <option value="buy">Buy</option>
-        <option value="sell">Sell</option>
-        <option value="swap">Swap</option></select
-      ><br />
-      <input type="submit" value="Add Exchange" />
-    </form>
-  </body>
+<head>
+  <title>Add Exchange</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+
+<body>
+  <div class="navbar">
+    <a href="registration-login/login.html">Exit</a>
+    <a href="../main.html">Home</a>
+    <div id="logo">
+      <h2>Coin catalog</h2>
+    </div>
+  </div>
+
+  <h2>Add a New Exchange</h2>
+
+  <form action="add_exchange.php" method="post">
+    <label for="user_id">User ID:</label><br />
+    <input type="number" id="user_id" name="user_id" required /><br />
+    <label for="coin_id">Coin ID:</label><br />
+    <input type="number" id="coin_id" name="coin_id" required /><br />
+    <label for="type">Type:</label><br />
+    <select id="type" name="type" required>
+      <option value="buy">Buy</option>
+      <option value="sell">Sell</option>
+      <option value="swap">Swap</option>
+    </select><br />
+    <input type="submit" value="Add Exchange" />
+  </form>
+</body>
+
 </html>

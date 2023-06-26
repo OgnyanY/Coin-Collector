@@ -15,12 +15,13 @@ if ($conn->connect_error) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $username = $_POST["username"];
   $password = $_POST["password"];
+  $email = $_POST["email"];
 
-  $sql = "INSERT INTO Users (username, password) VALUES (?, ?)";
+  $sql = "INSERT INTO Users (username, password, email) VALUES (?, ?, ?)";
 
   // Prepare and bind
   $stmt = $conn->prepare($sql);
-  $stmt->bind_param("ss", $username, $password);
+  $stmt->bind_param("sss", $username, $password, $email);  // bind the email parameter
 
   // Execute the statement
   if ($stmt->execute()) {

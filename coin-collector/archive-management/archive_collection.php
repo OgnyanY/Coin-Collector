@@ -24,6 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // Execute the statement
   if ($stmt->execute()) {
     echo "Collection archived successfully";
+    header("Location: ../successful.html");
     
   } else {
     echo "Error: " . $sql . "<br>" . $conn->error;

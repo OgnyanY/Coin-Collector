@@ -1,46 +1,71 @@
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "test";
+<!DOCTYPE html>
+<html>
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+<head>
+  <title>Collections</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
 
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
+<body>
+  <div class="navbar">
+    <div class="menu">
+      <a href="../main.html">Home</a>
+      <a href="../registration-login/login.html">Exit</a>
+    </div>
+    <div id="logo">
+      <h2>Coin catalog</h2>
+    </div>
+  </div>
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $name = $_POST["name"];
+  <div id="coins" class="php_generated">
 
-  $sql = "SELECT name, country, year, value, image_front, image_back FROM Coins WHERE name LIKE ?";
+    <?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "test";
 
-  // Prepare and bind
-  $stmt = $conn->prepare($sql);
-  $stmt->bind_param("s", $name);
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
 
-  // Execute the statement
-  $stmt->execute();
+    // Check connection
+    if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+    }
 
-  // Bind the result to variables
-  $stmt->bind_result($name, $country, $year, $value, $image_front, $image_back);
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+      $name = $_POST["name"];
 
-  // Fetch the result
-  while ($stmt->fetch()) {
-    echo "<div class='coin_row'>";
-    echo "<h3>" . $name . "</h3>";
-    echo "<p>Country: " . $country . "</p>";
-    echo "<p>Year: " . $year . "</p>";
-    echo "<p>Value: " . $value . "</p>";
-    echo "<div class='coin_images'><img src='" . $image_front . "' alt='Image Front'class='coin_image'>";
-    echo "<img src='" . $image_back . "' alt='Image Back' class='coin_image'></div>";
-    echo "</div>";
-  }
+      $sql = "SELECT name, country, year, value, image_front, image_back FROM Coins WHERE name LIKE ?";
 
-  $stmt->close();
-}
+      // Prepare and bind
+      $stmt = $conn->prepare($sql);
+      $stmt->bind_param("s", $name);
 
-$conn->close();
-?>
+      // Execute the statement
+      $stmt->execute();
+
+      // Bind the result to variables
+      $stmt->bind_result($name, $country, $year, $value, $image_front, $image_back);
+
+      // Fetch the result
+      while ($stmt->fetch()) {
+        echo "<div class='coin_row'>";
+        echo "<h3>" . $name . "</h3>";
+        echo "<p>Country: " . $country . "</p>";
+        echo "<p>Year: " . $year . "</p>";
+        echo "<p>Value: " . $value . "</p>";
+        echo "<div class='coin_images'><img src='" . $image_front . "' alt='Image Front'class='coin_image'>";
+        echo "<img src='" . $image_back . "' alt='Image Back' class='coin_image'></div>";
+        echo "</div>";
+      }
+
+      $stmt->close();
+    }
+
+    $conn->close();
+    ?>
+  </div>
+</body>
+
+</html>

@@ -7,6 +7,16 @@
 </head>
 
 <body>
+  <div class="navbar">
+    <div class="menu">
+      <a href="../main.html">Home</a>
+      <a href="../registration-login/login.html">Exit</a>
+    </div>
+    <div id="logo">
+      <h2>Coin catalog</h2>
+    </div>
+  </div>
+
   <h2>View Collections</h2>
 
   <div class="php_generated">

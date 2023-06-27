@@ -9,8 +9,8 @@
 <body>
   <div class="navbar">
     <div class="menu">
+    <a href="../main.html">Home</a>
       <a href="../registration-login/login.html">Exit</a>
-      <a href="../main.html">Home</a>
     </div>
     <div id="logo">
       <h2>Coin catalog</h2>

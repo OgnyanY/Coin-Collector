@@ -1,10 +1,22 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Add Coin to Collection</title>
     <link rel="stylesheet" href="../css/styles.css">
 </head>
+
 <body>
+    <div class="navbar">
+        <div class="menu">
+            <a href="../main.html">Home</a>
+            <a href="../registration-login/login.html">Exit</a>
+        </div>
+        <div id="logo">
+            <h2>Coin catalog</h2>
+        </div>
+    </div>
+
     <h2>Add Coin to Collection</h2>
 
     <form action="add_coin_to_collection.php" method="post">
@@ -15,7 +27,7 @@
             $servername = "localhost";
             $username = "root";
             $password = "";
-            $dbname = "test";  // replace with your database name
+            $dbname = "test"; // replace with your database name
             $conn = new mysqli($servername, $username, $password, $dbname);
             if ($conn->connect_error) {
                 die("Connection failed: " . $conn->connect_error);
@@ -46,4 +58,5 @@
         <input type="submit" value="Add Coin">
     </form>
 </body>
+
 </html>

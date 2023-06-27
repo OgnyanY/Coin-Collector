@@ -19,6 +19,8 @@
 
   <h2>Exchanges</h2>
 
+  <div class="php_generated">
+
   <?php
   $servername = "localhost";
   $username = "root";
@@ -40,7 +42,9 @@
   if ($result->num_rows > 0) {
     // output data of each row
     while ($row = $result->fetch_assoc()) {
+      echo "<div class='coin_row'>";
       echo "<h3>" . $row["username"] . " - " . $row["type"] . " - " . $row["name"] . "</h3>";
+      echo "</div>";
     }
   } else {
     echo "No exchanges found";
@@ -48,6 +52,8 @@
 
   $conn->close();
   ?>
+
+  </div>
 </body>
 
 </html>

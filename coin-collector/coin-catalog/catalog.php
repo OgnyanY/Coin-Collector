@@ -17,7 +17,7 @@
     </div>
   </div>
 
-  <div class="php_generated">
+  <div id="coins" class="php_generated">
     <?php
     $servername = "localhost";
     $username = "root";

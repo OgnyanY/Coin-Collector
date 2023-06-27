@@ -19,40 +19,45 @@
 
   <h2>Statistics</h2>
 
-  <?php
-  $servername = "localhost";
-  $username = "root";
-  $password = "";
-  $dbname = "test";
+  <div class="php_generated">
 
-  // Create connection
-  $conn = new mysqli($servername, $username, $password, $dbname);
+    <?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "test";
 
-  // Check connection
-  if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-  }
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
 
-  // Number of coins
-  $sql = "SELECT COUNT(*) AS num_coins FROM Coins";
-  $result = $conn->query($sql);
-  $row = $result->fetch_assoc();
-  echo "<p>Number of coins: " . $row["num_coins"] . "</p>";
+    // Check connection
+    if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+    }
 
-  // Number of collections
-  $sql = "SELECT COUNT(*) AS num_collections FROM Collections";
-  $result = $conn->query($sql);
-  $row = $result->fetch_assoc();
-  echo "<p>Number of collections: " . $row["num_collections"] . "</p>";
+    // Number of coins
+    echo "<div class='coin_row'>";
+    $sql = "SELECT COUNT(*) AS num_coins FROM Coins";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+    echo "<p>Number of coins: " . $row["num_coins"] . "</p>";
 
-  // Number of exchanges
-  $sql = "SELECT COUNT(*) AS num_exchanges FROM Exchanges";
-  $result = $conn->query($sql);
-  $row = $result->fetch_assoc();
-  echo "<p>Number of exchanges: " . $row["num_exchanges"] . "</p>";
+    // Number of collections
+    $sql = "SELECT COUNT(*) AS num_collections FROM Collections";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+    echo "<p>Number of collections: " . $row["num_collections"] . "</p>";
 
-  $conn->close();
-  ?>
+    // Number of exchanges
+    $sql = "SELECT COUNT(*) AS num_exchanges FROM Exchanges";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+    echo "<p>Number of exchanges: " . $row["num_exchanges"] . "</p>";
+    echo "</div>";
+    $conn->close();
+    ?>
+    
+  </div>
 </body>
 
 </html>

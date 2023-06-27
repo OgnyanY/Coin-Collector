@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>View Collections</title>
-    <link rel="stylesheet" href="../css/styles.css">
+  <title>View Collections</title>
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
+
 <body>
-    <h2>View Collections</h2>
+  <h2>View Collections</h2>
+
+  <div class="php_generated">
 
     <?php
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "test";  // replace with your database name
-
+    $dbname = "test"; // replace with your database name
+    
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -27,7 +31,7 @@
 
     if ($result->num_rows > 0) {
       // Output data of each row
-      while($row = $result->fetch_assoc()) {
+      while ($row = $result->fetch_assoc()) {
         echo "<h3>" . $row["name"] . "</h3>";
 
         // Fetch coins in the collection
@@ -36,10 +40,12 @@
 
         if ($result2->num_rows > 0) {
           // Output data of each row
-          while($row2 = $result2->fetch_assoc()) {
+          while ($row2 = $result2->fetch_assoc()) {
+            echo "<div class='coin_row'>";
             echo "<p>" . $row2["name"] . " (" . $row2["country"] . ", " . $row2["year"] . ") - " . $row2["value"] . "</p>";
-            echo "<img src='" . $row2["image_front"] . "' alt='Image front'>";
-            echo "<img src='" . $row2["image_back"] . "' alt='Image back'>";
+            echo "<div class='coin_images'><img src='" . $row["image_front"] . "' alt='Image Front' class='coin_image'>";
+            echo "<img src='" . $row["image_back"] . "' alt='Image Back' class='coin_image'></div>";
+            echo "</div>";
           }
         } else {
           echo "<p>No coins in this collection</p>";
@@ -51,5 +57,7 @@
 
     $conn->close();
     ?>
+  </div>
 </body>
+
 </html>

@@ -29,12 +29,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   // Fetch the result
   while ($stmt->fetch()) {
+    echo "<div class='coin_row'>";
     echo "<h3>" . $name . "</h3>";
     echo "<p>Country: " . $country . "</p>";
     echo "<p>Year: " . $year . "</p>";
     echo "<p>Value: " . $value . "</p>";
-    echo "<p><img src='" . $image_front . "' alt='Image Front'></p>";
-    echo "<p><img src='" . $image_back . "' alt='Image Back'></p>";
+    echo "<div class='coin_images'><img src='" . $image_front . "' alt='Image Front'class='coin_image'>";
+    echo "<img src='" . $image_back . "' alt='Image Back' class='coin_image'></div>";
+    echo "</div>";
   }
 
   $stmt->close();

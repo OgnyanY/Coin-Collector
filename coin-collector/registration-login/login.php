@@ -1,4 +1,6 @@
 <?php
+session_start(); // start the session
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -30,6 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   // Fetch the result
   if ($stmt->fetch()) {
+    $_SESSION['user_id'] = $id; // set the user_id session variable
     header("Location: ../main.html");  // redirect to main page
     exit;
   } else {

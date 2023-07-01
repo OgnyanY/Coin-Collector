@@ -10,7 +10,7 @@
   <div class="navbar">
     <div class="menu">
       <a href="../main.html">Home</a>
-      <a href="../registration-login/login.html">Exit</a>
+      <a href="../registration-login/logout.php">Exit</a>
     </div>
     <div id="logo">
       <h2>Coin catalog</h2>
@@ -22,6 +22,8 @@
   <div class="php_generated">
 
     <?php
+    session_start(); // start the session
+
     $servername = "localhost";
     $username = "root";
     $password = "";
@@ -35,22 +37,25 @@
       die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "SELECT Users.username, Collections.name FROM Collections JOIN Users ON Collections.user_id = Users.id";
-
-    $result = $conn->query($sql);
+    // Fetch collections of the currently logged-in user
+    $sql = "SELECT name FROM Collections WHERE user_id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $_SESSION['user_id']); // use the id of the currently logged-in user
+    $stmt->execute();
+    $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
       // output data of each row
       while ($row = $result->fetch_assoc()) {
         echo "<div class='coin_row'>";
         echo "<h3>" . $row["name"] . "</h3>";
-        echo "<p>Owned by: " . $row["username"] . "</p>";
         echo "</div>";
       }
     } else {
       echo "No collections found";
     }
 
+    $stmt->close();
     $conn->close();
     ?>
 

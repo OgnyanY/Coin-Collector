@@ -55,6 +55,12 @@
             echo "<p>" . $row2["name"] . " (" . $row2["country"] . ", " . $row2["year"] . ") - " . $row2["value"] . "</p>";
             echo "<div class='coin_images'><img src='" . $row2["image_front"] . "' alt='Image Front' class='coin_image'>";
             echo "<img src='" . $row2["image_back"] . "' alt='Image Back' class='coin_image'></div>";
+            echo "<select class='exchange_menu'>";
+            echo "<option value='none'>-</option>";
+            echo "<option value='buy'>Buy</option>";
+            echo "<option value='sell'>Sell</option>";
+            echo "<option value='swap'>Swap</option>";
+            echo "</select>";
             echo "</div>";
           }
         } else {

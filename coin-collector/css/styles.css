@@ -204,7 +204,7 @@ a[type="registration"] {
     flex-wrap: wrap;
 }
 
-.add_button{
+.add_button {
     width: 100px;
     height: 50px;
     background-color: #1fa024;
@@ -217,4 +217,10 @@ a[type="registration"] {
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
+}
+
+.exchange_menu {
+    width: 60px;
+    height: 20px;
+    border-radius: 5px;
 }

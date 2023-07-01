@@ -38,6 +38,7 @@ while ($stmt->fetch()) {
   echo "<p>Value: " . $value . "</p>";
   echo "<div class='coin_images'><img src='" . $image_front . "' alt='Image Front'class='coin_image'>";
   echo "<img src='" . $image_back . "' alt='Image Back' class='coin_image'></div>";
+  echo "<button class='add_button' type='button'>Add to collection</button>";
   echo "</div>";
 }
 

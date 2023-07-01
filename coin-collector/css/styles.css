@@ -203,3 +203,18 @@ a[type="registration"] {
     align-content: center;
     flex-wrap: wrap;
 }
+
+.add_button{
+    width: 100px;
+    height: 50px;
+    background-color: #1fa024;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}

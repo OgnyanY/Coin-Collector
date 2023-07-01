@@ -166,6 +166,12 @@ a[type="registration"] {
 .menu {
     justify-self: end;
     margin-right: 20px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+#exit{
+    margin-left: 50px;
 }
 
 .php_generated {

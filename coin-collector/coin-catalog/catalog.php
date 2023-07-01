@@ -8,13 +8,17 @@
 </head>
 
 <body>
-  <div class="navbar">
+    <div class="navbar">
     <div class="menu">
-      <a href="../main.html">Home</a>
-      <a href="../registration-login/login.html">Exit</a>
+      <a id="exit" href="../registration-login/login.html">Exit</a>
+      <div>
+        <a href="add_coin.html">Add to Catalog</a>
+        <a href="../collection-management/view_collections.php">View Collections</a>
+        <a href="../exchange-management/exchanges.php">View Exchanges</a>
+      </div>
     </div>
     <div id="logo">
-      <h2>Coin catalog</h2>
+      <h2><a href="catalog.php">Coin catalog</a></h2>
     </div>
   </div>
 
@@ -28,14 +32,14 @@
   </div>
 
   <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
       // Function to fetch coins
       function fetchCoins(name = '') {
         $.ajax({
           url: 'fetch_coins.php',
           type: 'post',
-          data: {name: name},
-          success: function(response) {
+          data: { name: name },
+          success: function (response) {
             $('#coins').html(response);
           }
         });
@@ -45,7 +49,7 @@
       fetchCoins();
 
       // Fetch coins when the search button is clicked
-      $('#search').click(function() {
+      $('#search').click(function () {
         var name = $('#name').val();
         fetchCoins(name);
       });

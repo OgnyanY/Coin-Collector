@@ -9,11 +9,17 @@
 <body>
   <div class="navbar">
     <div class="menu">
-      <a href="../main.html">Home</a>
-      <a href="../registration-login/logout.php">Exit</a>
+      <a id="exit" href="../registration-login/login.html">Exit</a>
     </div>
+
+    <div>
+      <a href="../coin-catalog/add_coin.html">Add to Catalog</a>
+      <a href="view_collections.php">View Collections</a>
+      <a href="../exchange-management/exchanges.php">View Exchanges</a>
+    </div>
+
     <div id="logo">
-      <h2>Coin catalog</h2>
+      <h2><a href="../coin-catalog/catalog.php">Coin catalog</a></h2>
     </div>
   </div>
 
@@ -23,7 +29,7 @@
 
     <?php
     session_start(); // start the session
-
+    
     $servername = "localhost";
     $username = "root";
     $password = "";

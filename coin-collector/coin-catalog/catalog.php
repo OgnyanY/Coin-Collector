@@ -8,14 +8,14 @@
 </head>
 
 <body>
-    <div class="navbar">
+  <div class="navbar">
     <div class="menu">
       <a id="exit" href="../registration-login/login.html">Exit</a>
-      <div>
-        <a href="add_coin.html">Add to Catalog</a>
-        <a href="../collection-management/view_collections.php">View Collections</a>
-        <a href="../exchange-management/exchanges.php">View Exchanges</a>
-      </div>
+    </div>
+    <div>
+      <a href="add_coin.html">Add to Catalog</a>
+      <a href="../collection-management/view_collections.php">View Collections</a>
+      <a href="../exchange-management/exchanges.php">View Exchanges</a>
     </div>
     <div id="logo">
       <h2><a href="catalog.php">Coin catalog</a></h2>

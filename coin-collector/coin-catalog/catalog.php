@@ -4,6 +4,7 @@
 <head>
   <title>Coin Catalog</title>
   <link rel="stylesheet" href="../css/styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -19,48 +20,38 @@
 
   <div class="search_bar">
     <input type="text" id="name" name="name" required />
-    <input type="submit" value="Search" />
+    <input type="submit" value="Search" id="search" />
   </div>
 
   <div id="coins" class="php_generated">
-    <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "test";
-
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    // Check connection
-    if ($conn->connect_error) {
-      die("Connection failed: " . $conn->connect_error);
-    }
-
-    $sql = "SELECT name, country, year, value, image_front, image_back FROM Coins";
-
-    $result = $conn->query($sql);
-
-    if ($result->num_rows > 0) {
-      // output data of each row
-      while ($row = $result->fetch_assoc()) {
-        echo "<div class='coin_row'>";
-        echo "<h3>" . $row["name"] . "</h3>";
-        echo "<p>Country: " . $row["country"] . "</p>";
-        echo "<p>Year: " . $row["year"] . "</p>";
-        echo "<p>Value: " . $row["value"] . "</p>";
-        echo "<div class='coin_images'><img src='" . $row["image_front"] . "' alt='Image Front' class='coin_image'>";
-        echo "<img src='" . $row["image_back"] . "' alt='Image Back' class='coin_image'></div>";
-        echo "</div>";
-      }
-    } else {
-      echo "No coins found";
-    }
-
-    $conn->close();
-    ?>
-
+    <!-- Coins will be inserted here by JavaScript -->
   </div>
+
+  <script>
+    $(document).ready(function() {
+      // Function to fetch coins
+      function fetchCoins(name = '') {
+        $.ajax({
+          url: 'fetch_coins.php',
+          type: 'post',
+          data: {name: name},
+          success: function(response) {
+            $('#coins').html(response);
+          }
+        });
+      }
+
+      // Fetch all coins when the page loads
+      fetchCoins();
+
+      // Fetch coins when the search button is clicked
+      $('#search').click(function() {
+        var name = $('#name').val();
+        fetchCoins(name);
+      });
+    });
+  </script>
 </body>
+
 
 </html>

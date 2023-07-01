@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // Execute the statement
   if ($stmt->execute()) {
     echo "New coin added successfully";
-    header("Location: ../successful.html");
+    header("Location: catalog.php");
   } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
   }

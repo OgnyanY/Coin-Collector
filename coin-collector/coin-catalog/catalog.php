@@ -17,6 +17,11 @@
     </div>
   </div>
 
+  <div class="search_bar">
+    <input type="text" id="name" name="name" required />
+    <input type="submit" value="Search" />
+  </div>
+
   <div id="coins" class="php_generated">
     <?php
     $servername = "localhost";

@@ -173,5 +173,33 @@ a[type="registration"] {
 }
 
 #coins {
+    margin-top: 0px;
+}
+
+.search_bar {
     margin-top: 86px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search_bar input[type="text"] {
+    width: 500px;
+}
+
+.search_bar input[type="submit"] {
+    width: 100px;
+    height: 22px;
+    margin-left: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
 }

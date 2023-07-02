@@ -25,6 +25,12 @@
 
   <h2>View Collections</h2>
 
+  <div class="add_bar">
+    <p>Enter name:</p>
+    <input type="text" id="name" name="name" required />
+    <input type="submit" value="Add new collection" id="search" />
+  </div>
+
   <div class="php_generated">
 
     <?php

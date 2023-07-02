@@ -22,10 +22,8 @@
   <div class="php_generated">
 
     <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "test";
+    
+    include '../shared-files/db_config.php';
 
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);

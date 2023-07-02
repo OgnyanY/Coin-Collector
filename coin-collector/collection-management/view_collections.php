@@ -35,17 +35,14 @@
   <div class="add_bar">
     <p>Enter name:</p>
     <input type="text" id="name" name="name" required />
-    <input type="submit" value="Add new collection" id="addCollection"/>
+    <input type="submit" value="Add new collection" id="addCollection" />
   </div>
 
   <div class="php_generated">
 
     <?php
 
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "test"; // replace with your database name
+    include '../shared-files/db_config.php';
 
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);

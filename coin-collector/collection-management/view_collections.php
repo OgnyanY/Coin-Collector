@@ -41,7 +41,7 @@
   <div class="php_generated">
 
     <?php
-    session_start(); // start the session
+    //session_start(); // start the session
 
     $servername = "localhost";
     $username = "root";

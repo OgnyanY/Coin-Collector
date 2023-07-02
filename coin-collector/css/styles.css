@@ -317,3 +317,7 @@ a[type="registration"] {
     align-content: center;
     flex-wrap: wrap;
 }
+
+.logged_as{
+    margin: 0px;
+}

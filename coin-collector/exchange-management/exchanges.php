@@ -10,6 +10,10 @@
   <div class="navbar">
     <div class="menu">
       <a id="exit" href="../registration-login/login.html">Exit</a>
+      <?php
+      $username = include '../shared-files/fetch_username.php';
+      echo "<p class='logged_as'>Logged in as: " . $username . "</p>"; // display the username
+      ?>
     </div>
 
     <div>

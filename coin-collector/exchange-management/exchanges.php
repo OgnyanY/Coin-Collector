@@ -14,8 +14,9 @@
 
     <div>
       <a href="../coin-catalog/add_coin.html">Add to Catalog</a>
-      <a href="../collection-management/view_collections.php">View Collections</a>
-      <a href="exchanges.php">View Exchanges</a>
+      <a href="../collection-management/view_collections.php">Collections</a>
+      <a href="exchanges.php">Exchanges</a>
+      <a href="../search-statistics/statistics.php">Statistics</a>
     </div>
 
     <div id="logo">

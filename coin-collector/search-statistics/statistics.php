@@ -9,11 +9,18 @@
 <body>
 <div class="navbar">
     <div class="menu">
-      <a href="../main.html">Home</a>
-      <a href="../registration-login/login.html">Exit</a>
+      <a id="exit" href="../registration-login/login.html">Exit</a>
     </div>
+
+    <div>
+      <a href="../coin-catalog/add_coin.html">Add to Catalog</a>
+      <a href="../collection-management/view_collections.php">Collections</a>
+      <a href="../exchange-management/exchanges.php">Exchanges</a>
+      <a href="statistics.php">Statistics</a>
+    </div>
+
     <div id="logo">
-      <h2>Coin catalog</h2>
+      <h2><a href="../coin-catalog/catalog.php">Coin catalog</a></h2>
     </div>
   </div>
 

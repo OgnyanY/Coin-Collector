@@ -43,6 +43,12 @@ $(document).ready(function () {
     }
   }
 
+  var closeButton = document.getElementById("close-modal-button");
+  closeButton.addEventListener("click", function () {
+    console.log("test");
+    document.getElementById("myModal").classList.remove("show");
+  });
+
   // Add event listener to the "Submit" button in the modal
   $("#submitCollection").click(function () {
     var collectionId = $("#collectionSelect").val(); // Get the id of the selected collection

@@ -1,8 +1,10 @@
 <?php
+session_start(); // start the session
+
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "test";
+$dbname = "test"; // replace with your database name
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -12,25 +14,20 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
+// Check if the request method is POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $user_id = $_POST["user_id"];
-  $name = $_POST["name"];
+  $name = $_POST['name'] ?? '';
 
-  $sql = "INSERT INTO Collections (user_id, name) VALUES (?, ?)";
+  // Check if the name is not empty
+  if ($name != '') {
+    // Insert the new collection into the database
+    $sql = "INSERT INTO Collections (name, user_id) VALUES (?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("si", $name, $_SESSION['user_id']); // use the id of the currently logged-in user
+    $stmt->execute();
 
-  // Prepare and bind
-  $stmt = $conn->prepare($sql);
-  $stmt->bind_param("is", $user_id, $name);
-
-  // Execute the statement
-  if ($stmt->execute()) {
-    echo "New collection added successfully";
-    header("Location: ../successful.html");
-  } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    $stmt->close();
   }
-
-  $stmt->close();
 }
 
 $conn->close();

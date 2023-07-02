@@ -4,6 +4,8 @@
 <head>
   <title>View Collections</title>
   <link rel="stylesheet" href="../css/styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="collections.js"></script>
 </head>
 
 <body>
@@ -28,19 +30,19 @@
   <div class="add_bar">
     <p>Enter name:</p>
     <input type="text" id="name" name="name" required />
-    <input type="submit" value="Add new collection" id="search" />
+    <input type="submit" value="Add new collection" id="addCollection"/>
   </div>
 
   <div class="php_generated">
 
     <?php
     session_start(); // start the session
-    
+
     $servername = "localhost";
     $username = "root";
     $password = "";
     $dbname = "test"; // replace with your database name
-    
+
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
 

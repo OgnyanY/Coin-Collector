@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // Fetch the result
   if ($stmt->fetch()) {
     $_SESSION['user_id'] = $id; // set the user_id session variable
-    header("Location: ../coin-catalog/catalog.php");  // redirect to main page
+    header("Location: ../coin-catalog/catalog.php"); // redirect to main page
     exit;
   } else {
     echo "Invalid username or password";

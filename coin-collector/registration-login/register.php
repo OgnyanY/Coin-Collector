@@ -19,11 +19,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   // Prepare and bind
   $stmt = $conn->prepare($sql);
-  $stmt->bind_param("sss", $username, $password, $email);  // bind the email parameter
+  $stmt->bind_param("sss", $username, $password, $email); // bind the email parameter
 
   // Execute the statement
   if ($stmt->execute()) {
-    header("Location: login.html");  // redirect to login page
+    header("Location: login.html"); // redirect to login page
     exit;
   } else {
     echo "Error: " . $sql . "<br>" . $conn->error;

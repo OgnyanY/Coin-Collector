@@ -31,7 +31,7 @@ $(document).ready(function () {
         success: function (response) {
           console.log("Response: " + response);
         },
-        error: function(jqXHR, textStatus, errorThrown) {
+        error: function (jqXHR, textStatus, errorThrown) {
           console.log(textStatus, errorThrown);
         }
       });

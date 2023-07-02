@@ -7,7 +7,7 @@
 </head>
 
 <body>
-<div class="navbar">
+  <div class="navbar">
     <div class="menu">
       <a id="exit" href="../registration-login/login.html">Exit</a>
       <?php
@@ -33,7 +33,7 @@
   <div class="php_generated">
 
     <?php
-    
+
     include '../shared-files/db_config.php';
 
     // Create connection

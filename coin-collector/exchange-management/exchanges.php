@@ -33,9 +33,9 @@
   <div class="php_generated">
 
     <?php
-    
+
     include '../shared-files/db_config.php';
-    
+
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -43,11 +43,11 @@
     if ($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
     }
-    
+
     $sql = "SELECT Users.username, Coins.name, Coins.country, Coins.year, Coins.value, Coins.image_front, Coins.image_back, Exchanges.type FROM Exchanges JOIN Users ON Exchanges.user_id = Users.id JOIN Coins ON Exchanges.coin_id = Coins.id";
 
     $result = $conn->query($sql);
-    
+
     if ($result->num_rows > 0) {
       // output data of each row
       while ($row = $result->fetch_assoc()) {
@@ -62,7 +62,7 @@
     } else {
       echo "No exchanges found";
     }
-    
+
     $conn->close();
     ?>
 

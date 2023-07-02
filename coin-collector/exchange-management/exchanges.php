@@ -45,22 +45,26 @@
     if ($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
     }
-
-    $sql = "SELECT Users.username, Coins.name, Exchanges.type FROM Exchanges JOIN Users ON Exchanges.user_id = Users.id JOIN Coins ON Exchanges.coin_id = Coins.id";
+    
+    $sql = "SELECT Users.username, Coins.name, Coins.country, Coins.year, Coins.value, Coins.image_front, Coins.image_back, Exchanges.type FROM Exchanges JOIN Users ON Exchanges.user_id = Users.id JOIN Coins ON Exchanges.coin_id = Coins.id";
 
     $result = $conn->query($sql);
-
+    
     if ($result->num_rows > 0) {
       // output data of each row
       while ($row = $result->fetch_assoc()) {
         echo "<div class='coin_row'>";
-        echo "<h3>" . $row["username"] . " - " . $row["type"] . " - " . $row["name"] . "</h3>";
+        echo "<h3>" . $row["name"] . " (" . $row["country"] . ", " . $row["year"] . ") - " . $row["value"] . "</h3>";
+        echo "<div class='coin_images'><img src='" . $row["image_front"] . "' alt='Image Front' class='coin_image'>";
+        echo "<img src='" . $row["image_back"] . "' alt='Image Back' class='coin_image'></div>";
+        echo "<p>" . $row["type"] . "</p>";
+        echo "<p>" . $row["username"] . "</p>";
         echo "</div>";
       }
     } else {
       echo "No exchanges found";
     }
-
+    
     $conn->close();
     ?>
 

@@ -41,7 +41,6 @@
   <div class="php_generated">
 
     <?php
-    //session_start(); // start the session
 
     $servername = "localhost";
     $username = "root";
@@ -69,7 +68,7 @@
         echo "<h3 style='border-top: 3px solid black;'>" . $row["name"] . "</h3>";
 
         // Fetch coins in the collection
-        $sql2 = "SELECT Coins.name, Coins.country, Coins.year, Coins.value, Coins.image_front, Coins.image_back FROM Collection_Coins JOIN Coins ON Collection_Coins.coin_id = Coins.id WHERE Collection_Coins.collection_id = ?";
+        $sql2 = "SELECT Coins.id, Coins.name, Coins.country, Coins.year, Coins.value, Coins.image_front, Coins.image_back FROM Collection_Coins JOIN Coins ON Collection_Coins.coin_id = Coins.id WHERE Collection_Coins.collection_id = ?";
         $stmt2 = $conn->prepare($sql2);
         $stmt2->bind_param("i", $row["id"]); // use the id of the current collection
         $stmt2->execute();
@@ -78,7 +77,7 @@
         if ($result2->num_rows > 0) {
           // Output data of each row
           while ($row2 = $result2->fetch_assoc()) {
-            echo "<div class='coin_row'>";
+            echo "<div class='coin_row' data-coin-id='" . $row2["id"] . "'>";
             echo "<p>" . $row2["name"] . " (" . $row2["country"] . ", " . $row2["year"] . ") - " . $row2["value"] . "</p>";
             echo "<div class='coin_images'><img src='" . $row2["image_front"] . "' alt='Image Front' class='coin_image'>";
             echo "<img src='" . $row2["image_back"] . "' alt='Image Back' class='coin_image'></div>";

@@ -10,10 +10,14 @@
   <div class="navbar">
     <div class="menu">
       <a id="exit" href="../registration-login/login.html">Exit</a>
+      <?php
+      $username = include '../shared-files/fetch_username.php';
+      echo "<p class='logged_as'>Logged in as: " . $username . "</p>"; // display the username
+      ?>
     </div>
 
     <div>
-      <a href="add_coin.html">Add to Catalog</a>
+      <a href="add_coin_page.php">Add to Catalog</a>
       <a href="../collection-management/view_collections.php">Collections</a>
       <a href="../exchange-management/exchanges.php">Exchanges</a>
       <a href="../search-statistics/statistics.php">Statistics</a>

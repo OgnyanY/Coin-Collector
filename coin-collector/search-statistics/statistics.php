@@ -17,7 +17,7 @@
     </div>
 
     <div>
-      <a href="../coin-catalog/add_coin.html">Add to Catalog</a>
+      <a href="../coin-catalog/add_coin_page.php">Add to Catalog</a>
       <a href="../collection-management/view_collections.php">Collections</a>
       <a href="../exchange-management/exchanges.php">Exchanges</a>
       <a href="statistics.php">Statistics</a>

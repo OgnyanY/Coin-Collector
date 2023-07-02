@@ -29,15 +29,33 @@ $(document).ready(function () {
       const modal = document.getElementById("myModal");
       modal.classList.add("show"); //show modal
 
-      //here do stuff with php:
-      //var coinId = $(this).parent().data("coin-id"); // Get the coin's id
-      //modal.data("coin-id", coinId); // Store the coin's id in the modal's data
+      // Fetch collections of the current user
+      $.ajax({
+        url: "fetch_collections.php",
+        type: "post",
+        success: function (response) {
+          $("#collectionSelect").html(response); // populate the dropdown menu with the fetched collections
+        },
+      });
+
+      var coinId = $(event.target).parent().data("coin-id"); // Get the coin's id
+      modal.dataset.coinId = coinId; // Store the coin's id in the modal's data
     }
   }
-  var closeButton = document.getElementById("close-modal-button");
-  console.log(closeButton);
-  closeButton.addEventListener("click", function () {
-    console.log("test");
-    document.getElementById("myModal").classList.remove("show");
+
+  // Add event listener to the "Submit" button in the modal
+  $("#submitCollection").click(function () {
+    var collectionId = $("#collectionSelect").val(); // Get the id of the selected collection
+    var coinId = $("#myModal")[0].dataset.coinId; // Get the id of the coin to be added to the collection
+
+    // Send a request to add the coin to the collection
+    $.ajax({
+      url: "add_coin_to_collection.php",
+      type: "post",
+      data: { collection_id: collectionId, coin_id: coinId },
+      success: function (response) {
+        document.getElementById("myModal").classList.remove("show"); // close the modal
+      },
+    });
   });
 });

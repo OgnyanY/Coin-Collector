@@ -15,11 +15,11 @@ if ($conn->connect_error) {
 $name = $_POST['name'] ?? '';
 
 if ($name != '') {
-  $sql = "SELECT name, country, year, value, image_front, image_back FROM Coins WHERE name LIKE ?";
+  $sql = "SELECT id, name, country, year, value, image_front, image_back FROM Coins WHERE name LIKE ?";
   $stmt = $conn->prepare($sql);
   $stmt->bind_param("s", $name);
 } else {
-  $sql = "SELECT name, country, year, value, image_front, image_back FROM Coins";
+  $sql = "SELECT id, name, country, year, value, image_front, image_back FROM Coins";
   $stmt = $conn->prepare($sql);
 }
 
@@ -27,11 +27,11 @@ if ($name != '') {
 $stmt->execute();
 
 // Bind the result to variables
-$stmt->bind_result($name, $country, $year, $value, $image_front, $image_back);
+$stmt->bind_result($id, $name, $country, $year, $value, $image_front, $image_back);
 
 // Fetch the result
 while ($stmt->fetch()) {
-  echo "<div class='coin_row'>";
+  echo "<div class='coin_row' data-coin-id='" . $id . "'>"; // Add data-coin-id attribute to the div
   echo "<h3>" . $name . "</h3>";
   echo "<p>Country: " . $country . "</p>";
   echo "<p>Year: " . $year . "</p>";

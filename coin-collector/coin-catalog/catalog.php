@@ -5,6 +5,7 @@
   <title>Coin Catalog</title>
   <link rel="stylesheet" href="../css/styles.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="catalog.js"></script>
 </head>
 
 <body>
@@ -31,30 +32,19 @@
     <!-- Coins will be inserted here by JavaScript -->
   </div>
 
-  <script>
-    $(document).ready(function () {
-      // Function to fetch coins
-      function fetchCoins(name = '') {
-        $.ajax({
-          url: 'fetch_coins.php',
-          type: 'post',
-          data: { name: name },
-          success: function (response) {
-            $('#coins').html(response);
-          }
-        });
-      }
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <button id="close-modal-button" class="close">&times;</button>
+      <p>Select a collection for the coin to be added in:</p>
+      <select id="collectionSelect">
+        <!-- Options will be filled by JavaScript -->
+      </select>
+      <button id="submitCollection">Submit</button>
+    </div>
+  </div>
 
-      // Fetch all coins when the page loads
-      fetchCoins();
-
-      // Fetch coins when the search button is clicked
-      $('#search').click(function () {
-        var name = $('#name').val();
-        fetchCoins(name);
-      });
-    });
-  </script>
 </body>
 
 

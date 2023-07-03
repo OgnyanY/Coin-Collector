@@ -17,7 +17,7 @@
       echo "<p class='logged_as'>Logged in as: " . $username . "</p>"; // display the username
       ?>
     </div>
-    <div>
+    <div id="ctalog_menu">
       <a href="add_coin_page.php">Add to Catalog</a>
       <a href="../collection-management/view_collections.php">Collections</a>
       <a href="../exchange-management/exchanges.php">Exchanges</a>

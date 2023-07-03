@@ -97,6 +97,9 @@ a[type="registration"] {
     border-radius: 10px;
     display: flex;
     flex-direction: column;
+    align-content: space-between;
+    align-items: center;
+
 }
 
 .import_export input[type="file"]{
@@ -109,14 +112,14 @@ a[type="registration"] {
 }
 
 .import_export input[type="submit"] {
-    width: 100%;
+    width: 80px;
     padding: 10px;
     background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 15px;
 }
 
 #catalog_menu{
@@ -127,7 +130,7 @@ a[type="registration"] {
 
 }
 #import{
-    
+
 }
 
 

@@ -26,9 +26,10 @@
         <input type="submit" value="Export" />
       </form>
       <form action="import.php" method="post" enctype="multipart/form-data">
-        <input type="file" name="csv" accept=".csv" />
-        <input type="submit" value="Import" />
-      </form>
+    Select CSV file to upload:
+    <input type="file" name="csv_data" id="csv_data">
+    <input type="submit" value="Import" name="submit">
+</form>
 
     </div>
     <div id="logo">

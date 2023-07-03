@@ -22,6 +22,14 @@
       <a href="../collection-management/view_collections.php">Collections</a>
       <a href="../exchange-management/exchanges.php">Exchanges</a>
       <a href="../search-statistics/statistics.php">Statistics</a>
+      <form action="export.php" method="post">
+        <input type="submit" value="Export" />
+      </form>
+      <form action="import.php" method="post" enctype="multipart/form-data">
+        <input type="file" name="csv" accept=".csv" />
+        <input type="submit" value="Import" />
+      </form>
+
     </div>
     <div id="logo">
       <h2><a href="catalog.php">Coin catalog</a></h2>

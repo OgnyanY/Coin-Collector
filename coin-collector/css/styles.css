@@ -87,48 +87,50 @@ a[type="registration"] {
     margin-top: 0px;
 }
 
-#menu {
-    height: 750px;
+
+.import_export {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    padding: 0px;
+    border: 1px solid #707070;
+    border-radius: 10px;
     display: flex;
-    margin-top: 100px;
-    margin-bottom: 50px;
-    justify-content: space-evenly;
     flex-direction: column;
-    align-items: center;
 }
 
-#menu ul {
-    list-style: none;
-    text-decoration: none;
+.import_export input[type="file"]{
+    display: block;
+    width: 99%;
+    text-align: center;
+    padding: 2px;
+    margin-top: 5px;
+    margin-bottom: 10px;
 }
 
-#menu li {
-    list-style: none;
-}
-
-#menu a {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 40px;
-    width: 300px;
-    text-decoration: none;
-    margin-right: 10px;
-    text-decoration: auto;
-    font-weight: bold;
-
-    border-bottom: solid #1b1b1b;
-
-    cursor: pointer;
-    font-size: 18px;
+.import_export input[type="submit"] {
+    width: 100%;
+    padding: 10px;
     background-color: #4CAF50;
     color: white;
-
+    border: none;
     border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
 
-    margin-top: 20px;
+#catalog_menu{
+    display: flex;
+}
+
+#export{
 
 }
+#import{
+    
+}
+
+
 
 #logo {
     justify-content: center;

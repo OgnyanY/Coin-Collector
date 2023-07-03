@@ -22,12 +22,12 @@
       <a href="../collection-management/view_collections.php">Collections</a>
       <a href="../exchange-management/exchanges.php">Exchanges</a>
       <a href="../search-statistics/statistics.php">Statistics</a>
-      <form action="export.php" method="post">
+      <form id="export" class="import_export" action="export.php" method="post">
         <input type="submit" value="Export" />
       </form>
-      <form action="import.php" method="post" enctype="multipart/form-data">
-        <input type="file" name="csv" accept=".csv" />
-        <input type="submit" value="Import" />
+      <form id="import" class="import_export" action="import.php" method="post" enctype="multipart/form-data">
+        <input type="file" name="csv_data" id="csv_data">
+        <input type="submit" value="Import" name="submit">
       </form>
 
     </div>
